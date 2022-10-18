@@ -98,4 +98,29 @@ async function createStudent() {
 
 /// CRUD ---R--> READ
 
-async function readStudents() {}
+// async function readStudents() {
+//   const studentData = await Student.find({ firstName: "Rezaul" });
+//   console.log(studentData);
+// }
+
+// readStudents();
+
+/// CRUD ---U--> Update
+
+// update by id
+
+// async function updateStudents(id) {
+//   const studentData = await Student.updateOne({ _id: id }, { $set: { passed: false } });
+
+//   console.log(studentData);
+// }
+
+// update by firstName
+
+async function updateStudents(firstName) {
+  const studentData = await Student.updateOne({ firstName: firstName }, { $set: { passed: true } });
+
+  console.log(studentData);
+}
+
+updateStudents("Rezaul");
