@@ -98,10 +98,10 @@ async function createStudent() {
 
 /// CRUD ---R--> READ
 
-// async function readStudents() {
-//   const studentData = await Student.find({ firstName: "Rezaul" });
-//   console.log(studentData);
-// }
+async function readStudents() {
+  const studentData = await Student.find({ firstName: "Rezaul" });
+  console.log(studentData);
+}
 
 // readStudents();
 
@@ -109,11 +109,11 @@ async function createStudent() {
 
 // update by id
 
-// async function updateStudents(id) {
-//   const studentData = await Student.updateOne({ _id: id }, { $set: { passed: false } });
+async function updateStudents(id) {
+  const studentData = await Student.updateOne({ _id: id }, { $set: { passed: false } });
 
-//   console.log(studentData);
-// }
+  console.log(studentData);
+}
 
 // update by firstName
 
@@ -123,4 +123,14 @@ async function updateStudents(firstName) {
   console.log(studentData);
 }
 
-updateStudents("Rezaul");
+//updateStudents("Rezaul");
+
+/// CRUD ---D--> DELETE
+
+async function deleteStudents(firstName) {
+  const studentData = await Student.deleteOne({ firstName: firstName });
+
+  console.log(studentData);
+}
+
+updateStudents("robi");
